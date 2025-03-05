@@ -16,7 +16,9 @@
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@types/express": "^5.0.0",
+    "@types/express-rate-limit": "^6.0.2",
     "@types/jasmine": "^5.1.7",
+    "@types/morgan": "^1.9.9",
     "@types/supertest": "^6.0.2",
     "eslint": "^9.21.0",
     "eslint-config-prettier": "^10.0.2",
@@ -31,9 +33,13 @@
     "typescript-eslint": "^8.26.0"
   },
   "dependencies": {
+    "@types/helmet": "^4.0.0",
     "cookie-parser": "^1.4.7",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "jasmine-spec-reporter": "^7.0.0"
+    "express-rate-limit": "^7.5.0",
+    "helmet": "^8.0.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "morgan": "^1.10.0"
   }
 }
