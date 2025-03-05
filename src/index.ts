@@ -1,10 +1,33 @@
+import dotenv from 'dotenv';
+// env variables
+dotenv.config();
 import express, { Application, Request, Response } from 'express';
 import morgan from 'morgan';
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
 import errorMiddleware from './middlewares/error.middlewre';
+import db from './db/index';
 
 const app: Application = express();
+
+// connect db
+db.connect()
+  .then((client) => {
+    return client
+      .query('SELECT NOW()')
+      .then((res) => {
+        console.log(`database connected on ` + res.rows[0].now);
+      })
+      .catch((err) => {
+        console.error('Query error:', err);
+      })
+      .finally(() => {
+        client.release();
+      });
+  })
+  .catch((err) => {
+    console.error('Connection error:', err);
+  });
 
 // logger
 app.use(morgan('dev'));

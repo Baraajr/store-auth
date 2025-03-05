@@ -8,15 +8,18 @@
     "start": "npm run build && node dist/index.js",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint src/**/*.ts",
-    "test": " npm run build && jasmine"
+    "test": " npm run build && jasmine",
+    "migrate": "db-migrate up"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/dotenv": "^8.2.3",
     "@types/express": "^5.0.0",
     "@types/express-rate-limit": "^6.0.2",
+    "@types/helmet": "^4.0.0",
     "@types/jasmine": "^5.1.7",
     "@types/morgan": "^1.9.9",
     "@types/supertest": "^6.0.2",
@@ -33,13 +36,16 @@
     "typescript-eslint": "^8.26.0"
   },
   "dependencies": {
-    "@types/helmet": "^4.0.0",
+    "@types/pg": "^8.11.11",
     "cookie-parser": "^1.4.7",
+    "db-migrate": "^0.11.14",
+    "db-migrate-pg": "^1.5.2",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
     "express-rate-limit": "^7.5.0",
     "helmet": "^8.0.0",
     "jasmine-spec-reporter": "^7.0.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pg": "^8.13.3"
   }
 }
