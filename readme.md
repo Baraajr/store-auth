@@ -1,1 +1,1 @@
-### JWT Authentication using Express JS / Postgres
+### JWT Authentication using Express TS / Postgres
