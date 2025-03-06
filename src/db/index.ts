@@ -1,9 +1,14 @@
 import { Pool } from 'pg';
 
+const database =
+  process.env.NODE_ENV === 'development'
+    ? process.env.POSTGRES_DB
+    : process.env.POSTGRES_DB_TEST;
+
 const pool = new Pool({
   user: process.env.POSTGRES_USER,
   host: process.env.POSTGRES_HOST,
-  database: process.env.POSTGRES_DB,
+  database,
   password: process.env.POSTGRES_PASSWORD,
   port: parseInt(process.env.POSTGRES_PORT as string, 10),
 });

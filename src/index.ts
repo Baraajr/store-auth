@@ -59,7 +59,7 @@ app.use('/api/v1', routes);
 
 app.get('/', (req: Request, res: Response) => {
   res.status(200).json({
-    message: 'Hello, World!',
+    text: 'Hello, World!',
   });
 });
 
@@ -68,7 +68,7 @@ app.use(errorMiddleware);
 
 // unhandeled routes
 app.all('/', (req: Request, res: Response) => {
-  res.status(404).json({ message: ' this route is not implemented' });
+  res.status(404).json({ message: ' this route is not implemented yet' });
 });
 
 process.on('unhandledRejection', (err) => {

@@ -7,6 +7,6 @@ describe('test basic endpoints', () => {
   it('GET /', async () => {
     const response = await request.get('/');
     expect(response.status).toBe(200);
-    // expect(response.message).toBe('Hello, World!');
+    expect(response.text).toBe('{"text":"Hello, World!"}');
   });
 });

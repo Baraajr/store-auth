@@ -8,7 +8,7 @@
     "start": "npm run build && node dist/index.js",
     "format": "prettier --write src/**/*.ts",
     "lint": "eslint src/**/*.ts",
-    "test": " npm run build && jasmine",
+    "test": " set NODE_ENV=test && tsc && db-migrate up --env test && tsc && jasmine && db-migrate reset --env test",
     "migrate": "db-migrate up"
   },
   "author": "",
